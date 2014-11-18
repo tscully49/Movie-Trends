@@ -5,21 +5,26 @@ SET search_path = test;
 
 
 CREATE TABLE movie(
-	--Stores the movie's name, title, year, and all four rating values
+	--Stores the movie's name, title, year, mpaa rating, runtime, release date, and all four rating values
 	id serial PRIMARY KEY,
 	title varchar(25),
 	year integer,
+	mpaa_rating varchar(5),
+	runtime integer,
+	release_date date,
+	plot text,
+	domestic_gross money,
 	RT_critic integer,
 	RT_audience integer,
 	metascore integer,
-	imbd float 
+	imdb float 
 );
 
-INSERT INTO movie VALUES (DEFAULT,'A',2000,8, 5, 3, 8.0);
-INSERT INTO movie VALUES (DEFAULT,'B',2001,9, 2, 5, 9.0);
-INSERT INTO movie VALUES (DEFAULT,'C',2001,7, 7, 9, 9.0);
-INSERT INTO movie VALUES (DEFAULT,'D',2001,10, 8, 4, 2.0);
-INSERT INTO movie VALUES (DEFAULT,'E',2000,8, 5, 8, 8.0); 
+INSERT INTO movie VALUES (DEFAULT,'A',2000, 'PG', 101, '2010-07-16', 'Some stuff happened', 1, 8, 5, 3, 8.0);
+INSERT INTO movie VALUES (DEFAULT,'B',2001, 'PG-13', 132, '2009-06-12', 'Group of people saved the world', 5, 9, 2, 5, 9.0);
+INSERT INTO movie VALUES (DEFAULT,'C',2001, 'G', 92, '2012-09-22', 'Happy Bunny Fun Time', 4, 7, 7, 9, 9.0);
+INSERT INTO movie VALUES (DEFAULT,'D',2001, 'R', 176, '2006-03-03', 'Twist: It was the butler all along.', 3, 10, 8, 4, 2.0);
+INSERT INTO movie VALUES (DEFAULT,'E',2000, 'NC-17', 116, '2002-12-01', 'Why are you watching this movie?', 2.01, 8, 5, 8, 8.0); 
 
 
 CREATE TABLE genre(
@@ -58,18 +63,19 @@ INSERT INTO actor VALUES (DEFAULT, 'BB');
 INSERT INTO actor VALUES (DEFAULT, 'CC');
 
 CREATE TABLE actor_in_movie(
-	--stores an actor/actress id and the id of a movie he/she was in
+	--stores an actor/actress id, the id of a movie he/she was in, and their character name
 	actor_id integer REFERENCES actor(id),
 	movie_id integer REFERENCES movie(id),
+	character_name varchar(25),
 	PRIMARY KEY(actor_id, movie_id)
 );
 
 
-INSERT INTO actor_in_movie VALUES (1,2);
-INSERT INTO actor_in_movie VALUES (2,3);
-INSERT INTO actor_in_movie VALUES (3,2);
-INSERT INTO actor_in_movie VALUES (1,3);
-INSERT INTO actor_in_movie VALUES (1,1);
+INSERT INTO actor_in_movie VALUES (1,2, 'Bob');
+INSERT INTO actor_in_movie VALUES (2,3, 'Sophia');
+INSERT INTO actor_in_movie VALUES (3,2, 'Leah');
+INSERT INTO actor_in_movie VALUES (1,3, 'James');
+INSERT INTO actor_in_movie VALUES (1,1, 'Timothy');
 
 
 CREATE TABLE director (
