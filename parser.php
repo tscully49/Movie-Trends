@@ -1,5 +1,5 @@
 <?php
-$conn = pg_connect('dbhost-pgsql.cs.missouri.edu'." ".'djb8tc'." ".'djb8tc'." ".'vKTwkRSj') or die('Could not connect: ' . pg_last_error());
+$conn = pg_connect(HOST." ".DBNAME." ".USERNAME." ".PASSWORD) or die('Could not connect: ' . pg_last_error());
 //Insert genres first
 $g_id = 1;
 $genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family',
