@@ -3,6 +3,7 @@ DROP SCHEMA IF EXISTS test CASCADE;
 CREATE SCHEMA test;
 SET search_path = test;
 
+
 CREATE TABLE movie(
 	id serial PRIMARY KEY,
 	title varchar(25),
@@ -25,6 +26,7 @@ CREATE TABLE actor_in_movie(
 
 
 CREATE TABLE director (
+
 	id serial PRIMARY KEY,
 	name varchar(25)
 );
@@ -57,11 +59,14 @@ INSERT INTO actor_in_movie VALUES (1,1);
 INSERT INTO director VALUES (DEFAULT, 'Steven Spielberg');
 INSERT INTO director VALUES (DEFAULT, 'Tom');
 
+
 INSERT INTO director_of_movie VALUES (1,2);
 INSERT INTO director_of_movie VALUES (2,1); 
 
 
+
 /*query2*/
+
 SELECT DISTINCT ON (a1.title) a1.title FROM movie AS a1 INNER JOIN actor_in_movie AS a2 ON (a1.id=a2.movie_id) INNER JOIN actor AS a3 ON (a3.id=a2.actor_id) 
 	WHERE a1.id=(
 		SELECT table1.movie_id FROM actor_in_movie AS table1, actor_in_movie AS table2 
@@ -80,6 +85,7 @@ SELECT genre, AVG(rating) FROM movie AS a1 INNER JOIN actor_in_movie AS a2 ON (a
 	WHERE (a3.name = 'AA') GROUP BY genre; 
  
 /*query5*/
+
 CREATE VIEW table1 AS SELECT a1.movie_id AS movie_id1 FROM actor_in_movie AS a1 INNER JOIN actor AS a2 ON (a1.actor_id = a2.id) 
 	WHERE (a2.name = 'AA');
 
