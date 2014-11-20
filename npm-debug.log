@@ -1,94 +1,28 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'install',
-1 verbose cli   '-g',
-1 verbose cli   'npm-gyp@1.0.2' ]
+1 verbose cli   'start' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 verbose cache add [ 'npm-gyp@1.0.2', null ]
-5 verbose cache add name=undefined spec="npm-gyp@1.0.2" args=["npm-gyp@1.0.2",null]
-6 verbose parsed url { protocol: null,
-6 verbose parsed url   slashes: null,
-6 verbose parsed url   auth: null,
-6 verbose parsed url   host: null,
-6 verbose parsed url   port: null,
-6 verbose parsed url   hostname: null,
-6 verbose parsed url   hash: null,
-6 verbose parsed url   search: null,
-6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'npm-gyp@1.0.2',
-6 verbose parsed url   path: 'npm-gyp@1.0.2',
-6 verbose parsed url   href: 'npm-gyp@1.0.2' }
-7 verbose cache add name="npm-gyp" spec="1.0.2" args=["npm-gyp","1.0.2"]
-8 verbose parsed url { protocol: null,
-8 verbose parsed url   slashes: null,
-8 verbose parsed url   auth: null,
-8 verbose parsed url   host: null,
-8 verbose parsed url   port: null,
-8 verbose parsed url   hostname: null,
-8 verbose parsed url   hash: null,
-8 verbose parsed url   search: null,
-8 verbose parsed url   query: null,
-8 verbose parsed url   pathname: '1.0.2',
-8 verbose parsed url   path: '1.0.2',
-8 verbose parsed url   href: '1.0.2' }
-9 verbose addNamed [ 'npm-gyp', '1.0.2' ]
-10 verbose addNamed [ '1.0.2', '1.0.2' ]
-11 silly lockFile 0f35e421-npm-gyp-1-0-2 npm-gyp@1.0.2
-12 verbose lock npm-gyp@1.0.2 C:\Users\Thomas\AppData\Roaming\npm-cache\0f35e421-npm-gyp-1-0-2.lock
-13 verbose request where is /npm-gyp
-14 verbose request registry https://registry.npmjs.org/
-15 verbose request id e639ab04fb20d68a
-16 verbose url raw /npm-gyp
-17 verbose url resolving [ 'https://registry.npmjs.org/', './npm-gyp' ]
-18 verbose url resolved https://registry.npmjs.org/npm-gyp
-19 verbose request where is https://registry.npmjs.org/npm-gyp
-20 info trying registry request attempt 1 at 14:44:41
-21 http GET https://registry.npmjs.org/npm-gyp
-22 http 404 https://registry.npmjs.org/npm-gyp
-23 verbose headers { date: 'Sun, 16 Nov 2014 20:44:53 GMT',
-23 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-23 verbose headers   'content-type': 'application/json',
-23 verbose headers   'cache-control': 'max-age=0',
-23 verbose headers   'content-length': '52',
-23 verbose headers   'accept-ranges': 'bytes',
-23 verbose headers   via: '1.1 varnish',
-23 verbose headers   age: '0',
-23 verbose headers   'x-served-by': 'cache-ord1722-ORD',
-23 verbose headers   'x-cache': 'MISS',
-23 verbose headers   'x-cache-hits': '0',
-23 verbose headers   'x-timer': 'S1416170693.683015,VS0,VE266',
-23 verbose headers   'keep-alive': 'timeout=10, max=50',
-23 verbose headers   connection: 'Keep-Alive' }
-24 silly registry.get cb [ 404,
-24 silly registry.get   { date: 'Sun, 16 Nov 2014 20:44:53 GMT',
-24 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-24 silly registry.get     'content-type': 'application/json',
-24 silly registry.get     'cache-control': 'max-age=0',
-24 silly registry.get     'content-length': '52',
-24 silly registry.get     'accept-ranges': 'bytes',
-24 silly registry.get     via: '1.1 varnish',
-24 silly registry.get     age: '0',
-24 silly registry.get     'x-served-by': 'cache-ord1722-ORD',
-24 silly registry.get     'x-cache': 'MISS',
-24 silly registry.get     'x-cache-hits': '0',
-24 silly registry.get     'x-timer': 'S1416170693.683015,VS0,VE266',
-24 silly registry.get     'keep-alive': 'timeout=10, max=50',
-24 silly registry.get     connection: 'Keep-Alive' } ]
-25 silly lockFile 0f35e421-npm-gyp-1-0-2 npm-gyp@1.0.2
-26 silly lockFile 0f35e421-npm-gyp-1-0-2 npm-gyp@1.0.2
-27 error 404 404 Not Found: npm-gyp
-27 error 404
-27 error 404 'npm-gyp' is not in the npm registry.
-27 error 404 You should bug the author to publish it
-27 error 404
-27 error 404 Note that you can also install from a
-27 error 404 tarball, folder, or http url, or git url.
-28 error System Windows_NT 6.1.7601
-29 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "npm-gyp@1.0.2"
-30 error cwd c:\Users\Thomas\Desktop\Movie-Trends
-31 error node -v v0.10.33
-32 error npm -v 1.4.28
-33 error code E404
-34 verbose exit [ 1, true ]
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info prestart Movie-Trends@0.0.0
+6 info start Movie-Trends@0.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info Movie-Trends@0.0.0 Failed to exec start script
+9 error Movie-Trends@0.0.0 start: `node ./bin/www`
+9 error Exit status 8
+10 error Failed at the Movie-Trends@0.0.0 start script.
+10 error This is most likely a problem with the Movie-Trends package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     node ./bin/www
+10 error You can get their info via:
+10 error     npm owner ls Movie-Trends
+10 error There is likely additional logging output above.
+11 error System Windows_NT 6.1.7601
+12 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+13 error cwd c:\Users\Thomas\Desktop\Movie-Trends
+14 error node -v v0.10.33
+15 error npm -v 1.4.28
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]
